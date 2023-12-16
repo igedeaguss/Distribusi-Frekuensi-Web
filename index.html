@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distribusi Frekuensi</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <style>
+    /* Styling untuk penampilan tab */
+    .tab-content {
+      padding: 20px;
+    }
+    
+    /* CSS untuk membuat konten pada tengah layar */
+    .content {
+      text-align: center;
+      margin-top: 50px; /* Sesuaikan jarak dari atas jika diperlukan */
+    }
+    header {
+      background-color: #f8f9fa; /* Warna latar belakang */
+      padding: 10px 0; /* Padding atas dan bawah */
+      text-align: center; /* Posisi teks di tengah */
+    }
+      
+  </style>
+</head>
+<body>
+  <header>
+      <h1 style="margin-bottom: 0">Kalkulator Distribusi Frekuensi</h1>
+  </header>
+
+  <!-- Konten -->
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Konten-->
+      <div class="col-lg-12" id="pemilihan-beasiswa">
+        <div class="row">
+          <!-- Container 1 -->
+          <div class="col-md-6 mb-3 mb-md-0">
+            <h3>Form Inputan</h3>
+            <hr>
+            <input class="form-control" type="text" placeholder="Masukkan angka (koma pemisah)" id="inputan">
+            
+            <button type="button" class="btn btn-dark mt-2" onclick="cekinput()" title="Hitung">
+                <i class="bi bi-arrow-right-square"></i>
+            </button>
+
+          
+            <button type="button" class="btn btn-dark mt-2" onclick="hapusData()" title="Hapus">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <button type="button" class="btn btn-dark mt-2" onclick="muatulang()" title="Muat Ulang">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <hr>
+            <span id="nilaiRataRataText" style="display: block;">Rata-rata : <span id="nilaiRataRata"></span></span>
+            <span id="nilaimedianText" style="display: block;">Median : <span id="nilaimedian"></span></span>
+            <span id="nilaimodusText" style="display: block;">Modus : <span id="nilaimodus"></span></span>
+            <span id="nilaiJangkauansText" style="display: block;">Jangkauan : <span id="nilaijangkauan"></span></span>
+            <span id="nilaiKelasText" style="display: block;">Banyak kelas : <span id="nilaikelas"></span></span>
+            <span id="nilaiIntervalText" style="display: block;">Panjang kelas interval : <span id="nilaiinterval"></span></span>
+            
+          </div>
+          <!-- Container 2 -->
+          <div class="col-md-6 mb-3 mb-md-0">
+            <h3>Tabel Distribusi Frekuensi</h3>
+            <hr>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Frekuensi</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tabel tampil">
+                    </tbody>
+                </table>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Konten Modal untuk pesan error -->
+  <div class="modal fade" id="pesanErrorModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pesan Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="teksError"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Bootstrap JS, jQuery, Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</body>
+</html>
